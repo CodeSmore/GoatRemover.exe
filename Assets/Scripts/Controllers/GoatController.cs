@@ -19,9 +19,10 @@ public class GoatController : MonoBehaviour {
 		
 	}
 
-    public void MakeGoat()
+    public void MakeGoat(int num = 1)
     {
-        GoatCounter += 1;
+        GoatCounter += Mathf.Clamp(num, -1, 1234);
+        GoatCounter = (int)Mathf.Clamp(GoatCounter, 0, 10000000000);
         UpdateUI();
     }
 

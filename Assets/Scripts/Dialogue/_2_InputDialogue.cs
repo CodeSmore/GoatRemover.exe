@@ -27,11 +27,13 @@ public class _2_InputDialogue : MonoBehaviour {
 
     public void SetName()
     {
-        dialogue.Name = GameObject.Find("NameInputField").transform.Find("Text").GetComponent<Text>().text.ToString();
+        dialogue.Name = gameObject.GetComponent<DialogueController>().nameText.text; // make player prefs save and load
 
         if (dialogue.Name == "")
         {
             dialogue.Name = "Don";
         }
+
+        PlayerPrefsManager.SaveGuideName(dialogue.Name);
     }
 }

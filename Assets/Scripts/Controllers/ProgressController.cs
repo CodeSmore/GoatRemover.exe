@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // Reference to events (not unity events) that will happen throughout the game. 
@@ -15,9 +16,17 @@ public class ProgressController : MonoBehaviour {
     void Start () {
         objectList = new List<GameObject>();
 
-        objectList.Add(GameObject.Find("NameInput"));
-        objectList.Add(GameObject.Find("Download"));
-        objectList.Add(GameObject.Find("MinigamePrompt"));
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            objectList.Add(GameObject.Find("NameInput"));
+            objectList.Add(GameObject.Find("Download"));
+            objectList.Add(GameObject.Find("MinigamePrompt"));
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            objectList.Add(GameObject.Find("Terminator"));
+        }
+        
         
         foreach (GameObject obj in objectList)
         {
@@ -36,7 +45,7 @@ public class ProgressController : MonoBehaviour {
 
 
     //   Original idea was to progress using touches to the screen when the highlighted edges appeared as a prompt
-    //   I still like the idea, but, due to self-imposed time constraints, is better to be saved for refactoring
+    //   I still like the idea, but, due to self-imposed time constraints, it's better to be saved for refactoring
     //   if the project gets that far ;)
 
     //   When using, put...

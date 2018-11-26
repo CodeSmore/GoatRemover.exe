@@ -64,13 +64,17 @@
     <Compile Include="Assets\Scripts\Controllers\DialogueController.cs" />
     <Compile Include="Assets\Scripts\Controllers\FakeDownloadController.cs" />
     <Compile Include="Assets\Scripts\Controllers\GoatController.cs" />
+    <Compile Include="Assets\Scripts\Controllers\IdleController.cs" />
     <Compile Include="Assets\Scripts\Controllers\ProgressController.cs" />
     <Compile Include="Assets\Scripts\Controllers\SceneController.cs" />
     <Compile Include="Assets\Scripts\Controllers\TimerController.cs" />
     <Compile Include="Assets\Scripts\Dialogue\_1_IntroDialogue.cs" />
     <Compile Include="Assets\Scripts\Dialogue\_2_InputDialogue.cs" />
     <Compile Include="Assets\Scripts\Dialogue\_3_PostDownloadDialogue.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\_4_PostGameDialogue.cs" />
     <Compile Include="Assets\Scripts\Models\Dialogue.cs" />
+    <Compile Include="Assets\Scripts\PlayerPrefsManager.cs" />
+    <Compile Include="Assets\terminator.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/codes/Desktop/UnityProjects/GoatRemover.exe/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

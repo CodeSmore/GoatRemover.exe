@@ -7,17 +7,36 @@ public class TimerController : MonoBehaviour {
 
     public int gameDurationInSeconds = 60;
     public Text timerText;
+    public GameObject endPanel;
 
     private float currentTimeLeft = 0;
+    private _4_PostGameDialogue dialogue;
+    private bool ContinueTiming = true;
 
 	// Use this for initialization
 	void Start () {
-        currentTimeLeft = gameDurationInSeconds;	
+        currentTimeLeft = gameDurationInSeconds;
+        dialogue = GameObject.FindObjectOfType<_4_PostGameDialogue>();
+
+        endPanel.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        UpdateTimer();	
+        if (ContinueTiming)
+        {
+            if (currentTimeLeft > 0)
+            {
+                UpdateTimer();
+            }
+            else
+            {
+                // end sequence
+                endPanel.SetActive(true);
+                dialogue.TriggerDialogue();
+                ContinueTiming = false;
+            }
+        }
 	}
 
     void UpdateTimer()

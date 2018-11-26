@@ -32,11 +32,6 @@ public class _3_PostDownloadDialogue : MonoBehaviour {
 
     public void SetName()
     {
-        dialogue.Name = GameObject.Find("NameInputField").transform.Find("Text").GetComponent<Text>().text.ToString();
-
-        if (dialogue.Name == "")
-        {
-            dialogue.Name = "Don";
-        }
+        dialogue.Name = PlayerPrefsManager.GetGuideName();
     }
 }
